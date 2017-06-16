@@ -1,0 +1,141 @@
+@import (less) '../common/element.less';
+
+// 矩形按钮
+.e_btn {
+    // 基本样式
+    .e_btn();
+    // 主题
+    &.green {
+        .e_btn_theme(#fff, @green, @green);
+        &.disabled {
+            .e_btn_theme(#fff, @m_gray_xxl, @m_gray_xxl);
+        }
+    }
+    &.gray {
+        .e_btn_theme(#bebebe, @gray, @gray);
+    }
+    &.gray_tx_green {
+        .e_btn_theme(@green, @gray, @gray);
+        &.disabled {
+            color: #bebebe;
+        }
+    }
+    // 尺寸
+    &.lg {
+        .e_btn_size(30/@rem, 30/@rem, 32, 1, 6/@rem);
+    }
+    &.md {
+        .e_btn_size(20/@rem, 30/@rem, 24, 1, 4/@rem);
+    }
+    &.full {
+        display: block;
+        width: 100%;
+    }
+}
+
+// 三角形
+.e_arr_d {
+    @top: 10/@rem;
+    @side: 8/@rem;
+    border-top: @top solid @black_s;
+    border-left: @side solid transparent;
+    border-right: @side solid transparent;
+    border-bottom: 0 solid transparent;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    &.green{
+        border-top: @top solid @green_s;
+    }
+}
+
+// 矩形按钮
+.e_rectbtn {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100/@rem;
+    background: gray;
+    text-align: center;
+    line-height: 100/@rem;
+    color: white;
+    text-decoration: none;
+    .font-size(34);
+    &.gray {
+        background: #dcdcdc;
+    }
+    // 绿色
+    &.green {
+        background: #90c13b;
+    }
+    &.light_green {
+        background: #b5da71;
+    }
+    &.red {
+        background: #ff6432;
+    }
+    &.pink {
+        background: #f8aa91;
+    }
+    &.fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+    }
+    &.small {
+        height: 100/@rem;
+        line-height: 100/@rem;
+    }
+    &.radius {
+        border-radius: 2/@rem;
+    }
+    // 禁用状态
+    &[disabled] {
+        background: #dcdcdc;
+        cursor: no-drop;
+    }
+}
+
+.e_loading {
+    @color: #ccc;
+    @base: 20/@rem;
+    width: 3*@base;
+    height: 2*@base;
+    background: linear-gradient(@color, @color) 0 50%, linear-gradient(@color, @color) 0.625*@base 50%, linear-gradient(@color, @color) 1.25*@base 50%, linear-gradient(@color, @color) 1.875*@base 50%, linear-gradient(@color, @color) 2.5*@base 50%;
+    background-repeat: no-repeat;
+    background-size: 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base;
+    animation: audioWave 1.5s linear infinite;
+}
+
+@keyframes audioWave {
+    @color: #ccc;
+    @color2: darken(@color, 10%);
+    @base: 20/@rem;
+    25% {
+        background: linear-gradient(@color2, @color2) 0 50%, linear-gradient(@color, @color) 0.625*@base 50%, linear-gradient(@color, @color) 1.25*@base 50%, linear-gradient(@color, @color) 1.875*@base 50%, linear-gradient(@color, @color) 2.5*@base 50%;
+        background-repeat: no-repeat;
+        background-size: 0.5*@base 2*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base;
+    }
+    37.5% {
+        background: linear-gradient(@color, @color) 0 50%, linear-gradient(@color2, @color2) 0.625*@base 50%, linear-gradient(@color, @color) 1.25*@base 50%, linear-gradient(@color, @color) 1.875*@base 50%, linear-gradient(@color, @color) 2.5*@base 50%;
+        background-repeat: no-repeat;
+        background-size: 0.5*@base 0.25*@base, 0.5*@base 2*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base;
+    }
+    50% {
+        background: linear-gradient(@color, @color) 0 50%, linear-gradient(@color, @color) 0.625*@base 50%, linear-gradient(@color2, @color2) 1.25*@base 50%, linear-gradient(@color, @color) 1.875*@base 50%, linear-gradient(@color, @color) 2.5*@base 50%;
+        background-repeat: no-repeat;
+        background-size: 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 2*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base;
+    }
+    62.5% {
+        background: linear-gradient(@color, @color) 0 50%, linear-gradient(@color, @color) 0.625*@base 50%, linear-gradient(@color, @color) 1.25*@base 50%, linear-gradient(@color2, @color2) 1.875*@base 50%, linear-gradient(@color, @color) 2.5*@base 50%;
+        background-repeat: no-repeat;
+        background-size: 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 2*@base, 0.5*@base 0.25*@base;
+    }
+    75% {
+        background: linear-gradient(@color, @color) 0 50%, linear-gradient(@color, @color) 0.625*@base 50%, linear-gradient(@color, @color) 1.25*@base 50%, linear-gradient(@color, @color) 1.875*@base 50%, linear-gradient(@color2, @color2) 2.5*@base 50%;
+        background-repeat: no-repeat;
+        background-size: 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 0.25*@base, 0.5*@base 2*@base;
+    }
+}

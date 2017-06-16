@@ -1,0 +1,12 @@
+@t_interval: 300ms;
+
+.t-slide-right-enter-active, .t-slide-right-leave-active {
+    transition: all @t_interval;
+}
+.t-slide-right-enter, .t-slide-right-leave-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(100%, 0);
+    opacity: 0;
+}

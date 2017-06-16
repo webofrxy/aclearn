@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>calac</title>
+</head>
+<body>
+	<div class="content">
+		<div class="con"></div>
+		<div class="head">head</div>
+		<div class="nav">nav</div>
+		<div class="nogoods">no product</div>
+	</div>
+</body>
+<style>
+	.content {
+		height: 100%;
+		width: 100%;
+		background-color: red;
+	}
+	.con {
+		height: 200px;
+		background-color: yellow;
+	}
+	.nogoods {
+		height: calc(100%-200px);
+		background-color: blue;
+	}
+	.head {
+		height: 80px;
+		position: fixed;
+		top: 0;
+		background-color: gold;
+	}
+	.nav {
+		height: 90px;
+		position: fixed;
+		top: 90px;
+		background-color: pink;
+	}
+</style>
+</html>

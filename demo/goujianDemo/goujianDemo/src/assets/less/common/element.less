@@ -1,0 +1,25 @@
+/*** 
+ **矩形按钮
+***/
+// 按钮基本样式
+.e_btn() {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+// 按钮主题
+.e_btn_theme(@color, @background, @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+}
+// 按钮尺寸
+.e_btn_size(@padding-vertical, @padding-horizontal, @font-size, @line-height, @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  .font-size(@font-size);
+  line-height: @line-height;
+  border-radius: @border-radius;
+}

@@ -1,0 +1,156 @@
+@keyframes co_loading_mask {
+    0% {
+        mask-position: 0% 0%;
+    }
+    100% {
+        mask-position: 100000% 0%;
+    }
+}
+// 加载页面
+.co_loading {
+    @wsize: 200px;
+    height: @wsize;
+    width: @wsize;
+    margin-left: -@wsize/2px;
+    margin-top: -@wsize/2px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    .loading {
+        @size: 100px;
+        height: @size;
+        width: @size;
+        margin-top: -(@size+40)/2px;
+        margin-left: -@size/2px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        &:before, &:after {
+            content: "";
+            background: url('../images/k.png') no-repeat center;
+            background-size: 100% 100%;
+            width: 100%; 
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &:after {
+            background-image: url('../images/k_c.png');
+            background-position: top;
+            background-size: 100%;
+            animation: co_loading_mask 3600s linear infinite both;
+            mask: url('../images/mask.png') repeat-x bottom;
+            mask-size: auto 100%;
+            height: 100%; // 多加2%防止rem计算出现非整数导致mask和bg展示尺寸不一致
+        }
+        .w {
+            position: absolute;
+            bottom: -60px;
+            height: 40px;
+            width: 300px;
+            text-align: center;
+            color: white;
+            .font-size(24);
+            left: 50%;
+            margin-left: -300/2px;
+        }
+    }
+
+    [data-dpr="1"] & {
+        @wsize: 200px/2;
+        height: @wsize;
+        width: @wsize;
+        margin-left: -@wsize/2px;
+        margin-top: -@wsize/2px;
+        .loading {
+            @size: 100px/2;
+            height: @size;
+            width: @size;
+            margin-top: -(@size+40/2)/2px;
+            margin-left: -@size/2px;
+        }
+        .w {
+            @radio: 2;
+            bottom: -60px/@radio;
+            height: 40px/@radio;
+            width: 300px/@radio;
+            margin-left: -300/2px/@radio;
+        }
+    }
+
+    [data-dpr="3"] & {
+        @wsize: 200px/2*3;
+        height: @wsize;
+        width: @wsize;
+        margin-left: -@wsize/2px;
+        margin-top: -@wsize/2px;
+        .loading {
+            @size: 100px/2*3;
+            height: @size;
+            width: @size;
+            margin-top: -(@size+40/2*3)/2px;
+            margin-left: -@size/2px;
+        }
+
+        .w {
+            @radio: 2/3;
+            bottom: -60px/@radio;
+            height: 40px/@radio;
+            width: 300px/@radio;
+            margin-left: -300/2px/@radio;
+        }
+    }
+}
+// 提示浮层
+.co_tips {
+    width: 460/@rem;
+    // min-height: 260/@rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -460/2/@rem;
+    margin-top: -260/2/@rem;
+    background: white;
+    border-radius: 3/@rem;
+    .msg {
+        padding: 50/@rem;
+        line-height: 48/@rem;
+        padding-bottom: 40/@rem;
+        .font-size(24);
+        border-bottom: 1px dashed #a2a2a2;
+        .lh {
+            color: #f68c1f;
+        }
+    }
+    .btn {
+        height: 70/@rem;
+        line-height: 70/@rem;
+        text-align: center;
+        a {
+            display: block;
+            color: #90c13b;
+            text-decoration: none;
+            .font-size(28);
+            &.green {
+                color: white;
+                background: #90c13b;
+            }
+        }
+    }
+    &.confirm {
+        .msg {
+            border-bottom-style: solid;
+        }
+        .btn {
+            display: flex;
+            a {
+                width: 50%;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,130 @@
+@green: #a3d14e;
+@gray: #f3f3f3;
+@border_gray: #e1e1e1;
+
+@red: #ff6633;
+@black_s: #333333;
+
+@gray_xl: #a5a5a5;
+@gray_l: #bbbbbb;
+@gray_m: #ececec;
+@gray_xs: #a0a0a0;
+@gray_s: #999999;
+
+// 最新色色
+
+// 灰色
+@m_gray_xs: #999999; // 用于（大部分icon）优惠前价格、联系人信息字体等
+@m_gray_s: #dcdcdc; // 用于请输入手机号、验证码字体
+@m_gray_m: #bbbbbb; // 用于底部提示信息、可选择的线框、验证码线框、头像线框
+@m_gray_l: #e1e1e1; // 常用于分割线
+@m_gray_xl: #ececec; // 常用于背景色
+@m_gray_xxl: #dddddd; // 常用于不可点击、置灰按钮
+
+// 其他颜色
+
+// 橙红色
+@orangered: #ffa200; // 未开班、待支付、待上课
+
+// 绿色
+@green_s: #a2d140;  //常用于点击态
+@green_m: #90c13b;  //常用于状态栏、tab切换等常显状态
+
+// 红色
+@red: #ff6432;  // 常用于购买、支付、售价
+
+// 状态类型-红色         用于：退款中、已退款、取消、拒单：红色
+@order_status_red: #f9494b; 
+// 状态类型-橙色         用于：待确认、等待请假确认
+@order_status_orange: #ffa200; 
+// 状态类型-灰色         用于：已确认 、已完成 、已经签到 、已请假
+@order_status_gray: #999999;
+// 状态类型-蓝色         用于：预约学员
+@order_status_blue: #7db6fd;
+// 状态类型-绿色         用于：已开班、上课完成、已完成：绿色
+@order_status_green: #90c13b;
+
+
+
+.tx_36 {
+	.font-size(36);
+}
+.tx_34 {
+	.font-size(34);
+}
+.tx_32 {
+	.font-size(30);
+}
+.tx_30 {
+	.font-size(30);
+}
+.tx_26 {
+	.font-size(26);
+}
+.tx_22 {
+	.font-size(22);
+}
+.tx_gray_xxl {
+	color: @m_gray_xxl;
+}
+.tx_gray_xl {
+	color: @m_gray_xl;
+}
+.tx_gray_l {
+	color: @m_gray_l; //原来是@gray_l: #bbbbbb
+}
+.tx_gray_m {
+	color: @m_gray_m;
+}
+.tx_gray_s {
+	color: @m_gray_s;
+}
+.tx_gray_ss {
+	color: @m_gray_xs;
+}
+.tx_white {
+	color: #fff;
+}
+.tx_green {
+	color: @green_m;
+}
+.tx_black {
+	color: @black_s;
+}
+.border_b {
+	border-bottom: 1px solid @border_gray;
+}
+.shadow() {
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.tx_money {
+	color: @red;
+}
+
+// 淡描边
+.border_gray_b {
+    border-bottom: 1px solid @m_gray_l;
+}
+.border_gray_r {
+    border-right: 1px solid #dcdcdc;
+}
+.border_gray_dot_b {
+    border-bottom: 1px dotted #dcdcdc;
+}
+.border_gray_dash_b {
+    border-bottom: 1px dashed #dcdcdc;
+}
+// 背景色
+.bg_gray {
+	background: @gray_m;
+}
+.bg_white {
+    background: #fff;
+}
+// m站背景灰
+.bg_m_gray {
+	background: @m_gray_xl;
+}
+.marauto {
+	margin: 0 auto;
+}
